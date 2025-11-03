@@ -95,7 +95,7 @@ def mine(host, port, wallet):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--node", default="104.248.10.130:17536", help="host:port of a Banncoin node")
+    ap.add_argument("--node", default="node.banncoin.org:17536", help="host:port of a Banncoin node")
     ap.add_argument("--wallet", required=True, help="your bnc1... address")
     args = ap.parse_args()
     host, port = args.node.split(":")
