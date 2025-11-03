@@ -1,26 +1,17 @@
-# 🛡️ Banncoin Security Protocol
+# 🛡️ Banncoin Security Policy
 
-## Active Continuum
-| Branch   | Status  |
-|----------|---------|
-| `main`   | ✅ Supported |
+**Supported branch:** `main`
 
-Legacy or experimental threads may not receive upstream security patches.
+If you discover a vulnerability, **do not open a public issue**.  
+Email **contact@banncoin.org** with a clear description, reproduction steps, and potential impact.
 
-## Vulnerability Disclosure
+## Handling process
+- We confirm receipt within **72 hours**.
+- We assess severity and target a fix or mitigation window.
+- We credit researchers by handle (optional) once patched and safe to disclose.
 
-If you encounter a potential security vulnerability within the Banncoin system,  
-**please refrain from creating a public issue**.
+## Scope & safe reporting
+Reports on denial-of-service, rate limiting, information leaks, and integrity issues are in scope.  
+Please avoid tests that could harm availability of public infrastructure.
 
-Instead, initiate secure contact via email:
-
-📧 **contact@banncoin.org
-**
-
-Include:
-- A clear, concise description of the issue
-- Steps to reproduce (if applicable)
-- Expected vs. actual behavior
-
-Your report will be assessed and acknowledged with discretion.  
-🪙 Thank you for safeguarding the Banncoin field.
+Thank you for helping keep the Banncoin network safe.
