@@ -1,0 +1,195 @@
+/* —— Banncoin Ancient Chrome v1 ————————————————————————— */
+:root{
+  --bnc-bg:#000; --bnc-ink:#f5f5f5; --bnc-accent:#F0D52D; --bnc-dim:#141414;
+  --bnc-max:1224px; --bnc-pad:24px; --bnc-gap:18px; --bnc-radius:16px;
+  --bnc-border:1px solid rgba(240,213,45,.55);
+}
+html,body{background:#000;color:var(--bnc-ink);text-rendering:optimizeLegibility;}
+
+/* Header */
+.ancient .bnc-header{position:sticky;top:0;z-index:50;background:linear-gradient(#0a0a0a,#000);border-bottom:var(--bnc-border);}
+.ancient .bnc-nav{max-width:var(--bnc-max);margin:0 auto;padding:12px var(--bnc-pad);display:flex;align-items:center;gap:14px;}
+.ancient .bnc-logo{display:inline-flex;align-items:center;gap:10px;padding:6px 10px;border:var(--bnc-border);border-radius:12px;background:#111;}
+.ancient .bnc-logo img{width:26px;height:26px;border-radius:8px;display:block;}
+.ancient .bnc-links{margin-left:auto;margin-right:auto;display:flex;gap:28px;}
+.ancient .bnc-links a{font-weight:600;letter-spacing:.02em;opacity:.88;text-decoration:none;color:var(--bnc-ink);}
+.ancient .bnc-links a:hover{opacity:1;text-underline-offset:6px;text-decoration:underline;color:var(--bnc-accent);}
+.ancient .bnc-lang{margin-left:auto;display:flex;gap:10px;align-items:center;}
+.ancient .bnc-lang a{font-weight:700;color:var(--bnc-accent);}
+
+/* Container & sections */
+.ancient .bnc-main{max-width:var(--bnc-max);margin:0 auto;padding:28px var(--bnc-pad) 64px;}
+.ancient .section{background:#0c0c0c;border:var(--bnc-border);border-radius:var(--bnc-radius);padding:28px;box-shadow:0 0 0 1px rgba(240,213,45,.08) inset;}
+.ancient .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:var(--bnc-gap);}
+@media (max-width:1024px){.ancient .grid-2{grid-template-columns:1fr;}}
+
+/* Hero */
+.ancient .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;}
+.ancient .hero.center{grid-template-columns:1fr;max-width:900px;margin:0 auto;text-align:center;}
+.ancient .hero h1{font-size:40px;line-height:1.1;margin:0 0 10px;}
+.ancient .hero p{opacity:.85;margin:0 0 18px;}
+.ancient .hero .cta-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start;}
+.ancient .hero.center .cta-row{justify-content:center;}
+.ancient .hero-figure img, .ancient .hero-figure video{display:block;max-width:100%;height:auto;border-radius:14px;border:var(--bnc-border);background:#111}
+
+/* Footer */
+.ancient .bnc-footer{border-top:var(--bnc-border);background:#080808;}
+.ancient .bnc-footwrap{max-width:var(--bnc-max);margin:0 auto;padding:22px var(--bnc-pad);display:flex;justify-content:space-between;align-items:center;}
+.ancient .bnc-muted{opacity:.7}
+
+/* Visibility helpers */
+.mobile-only{display:none;} .desktop-only{display:initial;}
+@media (max-width:1024px){.mobile-only{display:initial;} .desktop-only{display:none;}}
+
+/* Active nav */
+.ancient .bnc-links a.is-active{color:var(--bnc-accent);text-decoration:none;opacity:1}
+
+/* Mining hero figure guards (in case older CSS hides it) */
+body.mining .hero-figure{display:block !important;}
+@media (min-width:1025px){body.mining .hero-figure{display:block !important;}}
+
+/* Mining page specific styles */
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+  align-items: center;
+  padding: 3rem 0;
+  min-height: 400px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  padding-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+  line-height: 1.4;
+  max-width: 90%;
+}
+
+.hero-figure {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  width: 200px;
+  height: 200px;
+  filter: drop-shadow(0 0 20px rgba(240, 213, 45, 0.3));
+  stroke: #F0D52D !important;
+  fill: none !important;
+}
+
+/* Icon fixes for mining page */
+.icon {
+  width: 1.5em;
+  height: 1.5em;
+  color: #F0D52D;
+  vertical-align: middle;
+  margin-right: 0.5em;
+  display: inline-block;
+}
+
+.icon--accent {
+  color: #F0D52D;
+  filter: brightness(1.2) saturate(1.1);
+}
+
+/* Force all SVG icons to be yellow */
+.icon svg,
+.hero-image,
+.public-icons img,
+img.icon,
+img[src*="icon-"] {
+  stroke: #F0D52D !important;
+  fill: none !important;
+  color: #F0D52D !important;
+  filter: brightness(0) saturate(100%) invert(77%) sepia(95%) saturate(2034%) hue-rotate(45deg) brightness(105%) contrast(101%) !important;
+}
+
+/* Mining page specific icon fixes */
+body.mining-page img[src*="icon-"],
+body.mining-page .icon,
+body.mining-page img.icon,
+.mining-page img[src*="icon-"],
+.mining-page .icon,
+.mining-page img.icon,
+.hero-image,
+.hero-figure img {
+  stroke: #F0D52D !important;
+  fill: none !important;
+  color: #F0D52D !important;
+  filter: brightness(0) saturate(100%) invert(77%) sepia(95%) saturate(2034%) hue-rotate(45deg) brightness(105%) contrast(101%) !important;
+}
+
+/* Force any green elements to yellow */
+body.mining-page * {
+  filter: hue-rotate(0deg) !important;
+}
+
+/* Specific overrides for green elements */
+body.mining-page .hero-image,
+body.mining-page .hero-figure,
+body.mining-page img[src*="pickaxe"],
+body.mining-page img[src*="icon-pickaxe"] {
+  filter: brightness(0) saturate(100%) invert(77%) sepia(95%) saturate(2034%) hue-rotate(45deg) brightness(105%) contrast(101%) !important;
+  background-color: transparent !important;
+}
+
+/* Desktop visibility override */
+@media (min-width: 768px) {
+  .desktop-only {
+    display: block !important;
+  }
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 767px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+    min-height: 350px;
+    gap: 1.5rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+    padding-bottom: 0.5rem;
+    word-wrap: break-word;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+  
+  .cta-row {
+    margin-top: 1.5rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .desktop-only {
+    display: none !important;
+  }
+  
+  .mobile-only {
+    display: block !important;
+  }
+}

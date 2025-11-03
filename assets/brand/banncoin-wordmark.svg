@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFD84D"/>
+      <stop offset="1" stop-color="#FFE48A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="300" fill="#0A0A0B"/>
+  <text x="80" y="180" font-family="Marcellus, Georgia, serif" font-size="120" fill="url(#gold)" letter-spacing="1">
+    Banncoin
+  </text>
+</svg>

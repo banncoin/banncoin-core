@@ -1,0 +1,34 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Banncoin — Everyday Sovereign Money">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a0b"/>
+      <stop offset="100%" stop-color="#1a1608"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="75%" cy="15%" r="80%">
+      <stop offset="0%" stop-color="rgba(255,216,77,0.25)"/>
+      <stop offset="60%" stop-color="rgba(255,216,77,0.08)"/>
+      <stop offset="100%" stop-color="rgba(255,216,77,0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Concentric rings -->
+  <g fill="none" stroke="#e6c54f" opacity="0.35" stroke-width="2" transform="translate(700,140)">
+    <circle cx="0" cy="0" r="220"/>
+    <circle cx="0" cy="0" r="170"/>
+    <circle cx="0" cy="0" r="120"/>
+    <circle cx="0" cy="0" r="70"/>
+  </g>
+
+  <!-- Title -->
+  <g fill="#ffd84d" font-family="Marcellus, Georgia, serif">
+    <text x="96" y="270" font-size="84" font-weight="800" fill="#ffe48a">Banncoin</text>
+    <text x="96" y="330" font-size="40" fill="#ffd84d">Everyday Sovereign Money</text>
+  </g>
+
+  <g fill="#cfcfcf" font-family="Inter, Segoe UI, Roboto, sans-serif" font-size="24">
+    <text x="96" y="380">Fair PoW • Fixed 3,333,333,333 BNC • Transparent by default • Built to evolve</text>
+  </g>
+</svg>
+

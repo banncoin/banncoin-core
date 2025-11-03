@@ -1,0 +1,15 @@
+:root {
+  --bg: #0c0b0a;
+  --bg-soft: radial-gradient(1200px 600px at 50% 0%, #1b160e44, transparent),
+             radial-gradient(1200px 600px at 50% 100%, #0e111a44, transparent),
+             #0c0b0a;
+  --text: #e9e6df;
+  --muted: #bfb9ac;
+  --link: #ffd166;
+  --panel: #151515cc;
+  --panel-border: #ffffff14;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --radius: 16px;
+  --gap: 16px;
+  --maxw: 1120px;
+}

@@ -1,0 +1,13 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Banncoin Docs</title>
+<link rel="stylesheet" href="/style.css">
+<div class="container" style="max-width:840px">
+  <h1>Banncoin Docs</h1>
+  <ul>
+    <li><a href="/docs/start-mining-banncoin.md">Start Mining (BNC)</a></li>
+    <li><a href="/docs/tech-truth.md">Tech Truth Sheet</a></li>
+    <li><a href="/docs/rpc-policy.md">RPC Policy (beta)</a></li>
+    <li><a href="/docs/plan-90-days.md">90-Day Plan (TX · Wallet · Security)</a></li>
+  </ul>
+</div>

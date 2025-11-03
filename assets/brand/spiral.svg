@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
+  <defs>
+    <linearGradient id="spiral-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0D52D"/>
+      <stop offset="100%" stop-color="#FFE48A"/>
+    </linearGradient>
+  </defs>
+  <circle cx="13" cy="13" r="12" fill="#111" stroke="url(#spiral-gradient)" stroke-width="1"/>
+  <path d="M13 4 Q20 7 19 13 Q17 20 13 19 Q7 17 8 13 Q10 7 13 8 Q16 10 15 13 Q14 15 13 14.5" 
+        fill="none" stroke="url(#spiral-gradient)" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

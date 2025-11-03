@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Favicons (robust set) -->
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="/assets/favicon.ico">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0a0a0b">
+<title>Banncoin Wallet Generator (client-side)</title>
+<meta name="author" content="wyah"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="stylesheet" href="/style.css">
+<style>
+  body { background:#0b0b0b; color:#eee; }
+  .container{ max-width:900px; margin:40px auto; padding:0 16px;}
+  .card{ border:1px solid rgba(240,213,45,.25); border-radius:12px; background:#111; padding:16px; margin:12px 0}
+  code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:13px }
+  .muted{ color:#bbb }
+  .btn{ display:inline-block; background:
+    e start mining button stays bmobile is ge so thats goyes header overlap after animation finishess mobil
+    ers like u did the banncoin.org homepage....; color:#111; padding:10px 14px; border-radius:10px; font-weight:700; text-decoration:none; }
+  .rowne overlkappingt  like u dplorer pp}
+  input[type=text], textarea{ width:100%; background:#0b0b0b; color:#eee; border:1px solid #333; border-radius:8px; padding:10px }
+  .note{ color:#bbb; font-size:14px }
+  #verifyOut{margin-top:8px;font-weight:700}
+  .verify-ok{color:#00e676}
+  .verify-warn{color:#F0D52D}
+  .verify-bad{color:#ff5252}
+</style>
+</head>
+<body class="wallet-standalone">
+<!-- header intentionally removed for standalone wallet page -->
+<div class="container">
+  <h1><img src="/public/icons/icon-lock.svg" class="icon icon--warning" alt="Security" /> Banncoin Wallet Generator</h1>
+  <p class="muted" data-i18n="wallet.backup_instructions">Fully client-side. No network calls. Works offline. Save your keys securely.</p>
+  <p class="muted">Mode: <span id="offline" style="color:#0f0">offline</span></p>
+
+  <div class="card">
+    <button id="gen" class="btn"><img src="/public/icons/icon-lock.svg" class="icon icon--success" alt="Generate" /> Generate New Wallet</button>
+    <span id="status" class="muted" style="margin-left:10px"></span>
+  </div>
+
+
+
+
+  <div class="card">
+    <h3 data-i18n="wallet.address_label">Address (shareable)</h3>
+    <input id="addr" type="text" readonly>
+    <p class="muted">Format: <code>bnc1…</code> (bech32). This is your public address.</p>
+    <button id="copyAddr" class="btn" type="button">Copy Address</button>
+  </div>
+
+  <div class="card">
+    <h3 data-i18n="wallet.public_key_label">Public Key (raw, base64)</h3>
+    <textarea id="pub" rows="3" readonly></textarea>
+  </div>
+
+  <div class="card">
+    <h3 data-i18n="wallet.secret_key_label">Secret Key (PKCS#8, base64)</h3>
+    <textarea id="sk" rows="6" style="filter: blur(5px);" readonly></textarea>
+    <p style="color:#f66;font-weight:700;margin-top:8px" data-i18n="wallet.seed_warning_body">Never share your secret. Anyone with it can spend your funds.</p>
+    <button id="reveal" class="btn" type="button">Reveal</button>
+    <button id="download" class="btn" type="button" data-i18n="wallet.download_backup"><img src="/public/icons/icon-lock.svg" class="icon icon--success" alt="Download" /> Download backup (.txt)</button>
+  </div>
+
+  <div class="card">
+    <h3>How to use offline</h3>
+    <ol>
+      <li><strong>Desktop:</strong> press <em>Ctrl+S</em> (or <em>File → Save page as…</em>) and save as <code>wallet.html</code>. On Windows you can also right‑click → <em>Save as…</em>.</li>
+      <li><strong>iPhone/iPad:</strong> tap <em>Share</em> → <em>Add to Home Screen</em> (runs offline), or <em>Save to Files</em> as <code>wallet.html</code> and open it later.</li>
+      <li><strong>Android:</strong> Chrome menu → <em>Download</em> to save the page, or <em>Add to Home screen</em>. You can also tap <em>Share</em> → <em>Save to Files</em>.</li>
+      <li>Switch to Airplane Mode, open the saved file, and generate keys.</li>
+    </ol>
+    <p class="muted">Tip: open DevTools → Network; you’ll see <strong>no requests</strong> at all.</p>
+  </div>
+
+  <!-- Verify a BNC address (offline) -->
+  <section class="card" style="margin-top:16px">
+    <h3>Verify a BNC address</h3>
+    <p>Paste an address to check format and checksum (Bech32, <code>bnc1…</code>).</p>
+    <input id="verifyInput" placeholder="bnc1..." style="width:100%;padding:8px;margin:6px 0">
+    <button id="verifyBtn" class="btn">Verify</button>
+    <span id="verifyOut" style="margin-left:10px;font-weight:700"></span>
+  </section>
+
+  <p class="muted">© 2025 Banncoin — forged in light.</p>
+</div>
+
+<!-- i18n loader -->
+<script>
+// Load structured i18n dictionaries
+async function loadI18n(locale = 'en') {
+  try {
+    const response = await fetch(`/i18n/${locale}.json`);
+    if (!response.ok) throw new Error('Failed to load i18n');
+    return await response.json();
+  } catch (error) {
+    console.warn('Failed to load i18n:', error);
+    return null;
+  }
+}
+
+// Apply translations to elements with data-i18n attributes
+function applyI18n(dict) {
+  if (!dict) return;
+  
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key]) {
+      if (el.tagName === 'INPUT' && el.type === 'button') {
+        el.value = dict[key];
+      } else {
+        el.textContent = dict[key];
+      }
+    }
+  });
+}
+
+// Initialize i18n on page load
+document.addEventListener('DOMContentLoaded', async () => {
+  const locale = new URLSearchParams(location.search).get('lang') || 
+                 localStorage.getItem('bnc_lang') || 'en';
+  
+  const dict = await loadI18n(locale);
+  applyI18n(dict);
+});
+</script>
+
+<script>
+/* ---------------- bech32 (no external libs) ---------------- */
+const BECH32_CHARSET = "qpzry9x8gf2tvdw0s3jn54khce6mua7l";
+function bech32Polymod(values){
+  const GENERATORS = [0x3b6a57b2,0x26508e6d,0x1ea119fa,0x3d4233dd,0x2a1462b3];
+  let chk = 1;
+  for (const v of values){
+    const top = chk >>> 25;
+    chk = ((chk & 0x1ffffff) << 5) ^ v;
+    for (let i=0;i<5;i++) if ((top >>> i) & 1) chk ^= GENERATORS[i];
+  }
+  return chk >>> 0;
+}
+function bech32HrpExpand(hrp){
+  const ret = [];
+  for (let i=0;i<hrp.length;i++) ret.push(hrp.charCodeAt(i) >>> 5);
+  ret.push(0);
+  for (let i=0;i<hrp.length;i++) ret.push(hrp.charCodeAt(i) & 31);
+  return ret;
+}
+function bech32CreateChecksum(hrp, data){
+  const values = bech32HrpExpand(hrp).concat(data);
+  const mod = bech32Polymod(values.concat([0,0,0,0,0,0])) ^ 1;
+  const ret = [];
+  for (let p=0;p<6;p++) ret.push((mod >>> (5*(5-p))) & 31);
+  return ret;
+}
+function bech32Encode(hrp, data){
+  const combined = data.concat(bech32CreateChecksum(hrp,data));
+  return hrp + '1' + combined.map(v => BECH32_CHARSET[v]).join('');
+}
+function convertBits(data, from, to, pad=true){
+  let acc=0, bits=0, ret=[];
+  const maxv = (1<<to)-1;
+  for (const value of data){
+    if (value<0 || (value>>from)!==0) return null;
+    acc = (acc<<from) | value;
+    bits += from;
+    while (bits >= to){
+      bits -= to;
+      ret.push((acc>>bits) & maxv);
+    }
+  }
+  if (pad){
+    if (bits>0) ret.push((acc<<(to-bits)) & maxv);
+  } else if (bits>=from || ((acc<<(to-bits)) & maxv)){
+    return null;
+  }
+  return ret;
+}
+// Optional lightweight decode for verifier
+function bech32Decode(addr){
+  if(!addr) return null;
+  addr = String(addr).toLowerCase();
+  const pos = addr.lastIndexOf('1');
+  if (pos < 1 || pos + 7 > addr.length) return null;
+  const hrp = addr.slice(0,pos);
+  const dataChars = addr.slice(pos+1);
+  const data = [];
+  for (const c of dataChars){
+    const v = BECH32_CHARSET.indexOf(c);
+    if (v === -1) return null;
+    data.push(v);
+  }
+  if (bech32Polymod(bech32HrpExpand(hrp).concat(data)) !== 1) return null;
+  // strip checksum
+  const words = data.slice(0, data.length - 6);
+  // regroup 5->8
+  let acc=0, bits=0; const out=[]; const maxv=(1<<8)-1;
+  for (const w of words){
+    acc = (acc<<5) | w; bits += 5;
+    while (bits >= 8){ bits -= 8; out.push((acc>>bits)&maxv); }
+  }
+  return { hrp, payload: new Uint8Array(out) };
+}
+/* ----------------------------------------------------------- */
+
+function toBase64(buf){ return btoa(String.fromCharCode(...new Uint8Array(buf))); }
+function toBytes(b64){ return Uint8Array.from(atob(b64), c=>c.charCodeAt(0)); }
+
+async function generate(){
+  const status = document.getElementById('status');
+  status.textContent = ' generating…';
+  // 1) Ed25519 keypair via WebCrypto
+  const keypair = await crypto.subtle.generateKey(
+    { name: "Ed25519" }, true, ["sign","verify"]
+  );
+  // 2) Export raw public key (32 bytes) and pkcs8 private
+  const pubRaw = await crypto.subtle.exportKey("raw", keypair.publicKey); // 32 bytes
+  const privPkcs8 = await crypto.subtle.exportKey("pkcs8", keypair.privateKey);
+
+  // 3) Address = bech32("bnc", convertBits(pubRaw, 8→5))
+  const pubBytes = new Uint8Array(pubRaw);
+  const five = convertBits(pubBytes, 8, 5, true);
+  const address = bech32Encode("bnc", five);
+
+  // 4) Fill UI
+  document.getElementById('addr').value = address;
+  document.getElementById('pub').value  = toBase64(pubRaw);
+  document.getElementById('sk').value = toBase64(privPkcs8);
+  status.textContent = ' ready.';
+}
+
+document.getElementById('gen').addEventListener('click', generate);
+
+document.getElementById('download').addEventListener('click', ()=>{
+  const addr = document.getElementById('addr').value.trim();
+  const pub  = document.getElementById('pub').value.trim();
+  const priv = document.getElementById('sk').value.trim();
+  if(!addr || !priv){ alert('Generate a wallet first.'); return; }
+  const blob = new Blob([
+    `Banncoin Wallet Backup\n\nAddress: ${addr}\n\nPublic (base64):\n${pub}\n\nSecret PKCS#8 (base64):\n${priv}\n`
+  ], {type:"text/plain"});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `banncoin_${addr}.txt`;
+  a.click();
+});
+
+// Reveal toggle (belt-and-suspenders: blur by default)
+document.getElementById('reveal').addEventListener('click', ()=>{
+  const sk = document.getElementById('sk');
+  sk.style.filter = sk.style.filter ? '' : 'blur(5px)';
+});
+
+// Copy address helper
+document.getElementById('copyAddr').addEventListener('click', async ()=>{
+  try{ await navigator.clipboard.writeText(document.getElementById('addr').value||''); }catch{}
+});
+
+// Inline offline/online indicator
+(function(){
+  const el = document.getElementById('offline');
+  if (!el) return;
+  const isFile = (location.protocol === 'file:');
+  el.textContent = isFile ? 'offline' : 'online (save this page and use it offline)';
+  el.style.color = isFile ? '#0f0' : '#f90';
+})();
+</script>
+<script>
+(function(){
+  // Classification overlay for Verify UI (uses bech32Decode above)
+  function classifyBNC(addr){
+    const dec = bech32Decode(addr);
+    if(!dec) return { ok:false, reason:'checksum/format' };
+    if(dec.hrp !== 'bnc') return { ok:false, reason:'HRP not "bnc"' };
+    const len = dec.payload.length;
+    if(len === 32) return { ok:true, ver:'v1', detail:'32-byte pubkey' };
+    if(len === 20) return { ok:true, ver:'v0', detail:'20-byte legacy hash' };
+    return { ok:false, reason:`payload ${len} bytes` };
+  }
+  const btn = document.getElementById('verifyBtn');
+  const inp = document.getElementById('verifyInput');
+  const out = document.getElementById('verifyOut');
+  function show(kind, text){
+    if(!out) return;
+    out.className = kind==='ok' ? 'verify-ok' : kind==='warn' ? 'verify-warn' : 'verify-bad';
+    out.textContent = text;
+  }
+  function doVerify(){
+    const a = (inp?.value||'').trim();
+    if(!a){ show('bad','✗ Empty address'); return; }
+    const r = classifyBNC(a);
+    if(r.ok){
+      if(r.ver === 'v1') show('ok','✓ Valid BNC address (v1 — 32-byte pubkey)');
+      else show('warn','✓ Valid BNC address (legacy v0 — 20-byte hash)');
+    } else {
+      show('bad', `✗ Invalid address (${r.reason})`);
+    }
+  }
+  if(btn){ btn.addEventListener('click', doVerify); }
+  if(inp){ inp.addEventListener('keydown', e=>{ if(e.key==='Enter') doVerify(); }); }
+})();
+</script>
+<script src="/assets/js/nav-active.js" defer></script>
+
+<!-- Improved offline detection with real ping -->
+<script>
+(function() {
+  const badgeSel = '#offline'; // existing mode badge element
+  const badge = document.querySelector(badgeSel);
+  if (!badge) return;
+
+  function setOnline(online) {
+    badge.textContent = online ? 'online' : 'offline';
+    badge.style.color = online ? '#0f0' : '#f44';
+  }
+
+  // Real connectivity test (no-cache ping)
+  async function checkOnline() {
+    try {
+      const r = await fetch('/favicon.ico?v=' + Date.now(), { 
+        method: 'HEAD', 
+        cache: 'no-store',
+        signal: AbortSignal.timeout(3000) // 3s timeout
+      });
+      setOnline(r.ok);
+    } catch {
+      setOnline(false);
+    }
+  }
+
+  // Initial check
+  checkOnline();
+  
+  // Check every 30 seconds
+  setInterval(checkOnline, 30000);
+  
+  // Also check on focus (user returns to tab)
+  window.addEventListener('focus', checkOnline);
+})();
+</script>
+
+</body>
+</html>
+
+
