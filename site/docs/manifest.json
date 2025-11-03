@@ -1,0 +1,17 @@
+{
+  "chain_id": "BNC-0fa9f99c4746e1c5",
+  "genesis_hash": "000000a30909db804f8e198f92149c604fcefaa200fea332188bea51a150e402",
+  "max_supply": 3333333333,
+  "block_time_target": 26,
+  "version": "v1.1.0-pre",
+  "exported_at": "2025-11-03T12:23:47.544927+00:00",
+  "source": "raspi",
+  "status": {
+    "chain_id": "BNC-0fa9f99c4746e1c5",
+    "difficulty_bits": 24,
+    "hash": "000000c37a6ef8028653c2060029884495a45e50a70546c1a91d6d921dc19815",
+    "height": 40591,
+    "next_retarget_in": 98,
+    "ok": true
+  }
+}
