@@ -1,5 +1,5 @@
 @echo off
-set NODE=104.248.10.130:17536
+set NODE=node.banncoin.org:17536
 set WALLET=%1
 if "%WALLET%"=="" (
   set /p WALLET=Enter your BNC address (bnc1...):

@@ -13,7 +13,7 @@ echo "→ Syncing live site files..."
 rsync -a --delete "$HOME/bnc_full_chain/" "$backup_root/live/" >> "$log_root/cold_sync_history.log" 2>&1
 
 echo "→ Pulling archives from node (if reachable)..."
-ssh -o ConnectTimeout=5 root@104.248.10.130 "tar -czf - /root/archives" \
+ssh -o ConnectTimeout=5 root@node.banncoin.org "tar -czf - /root/archives" \
     | tar -xzf - -C "$backup_root/node_archives/" 2>>"$log_root/cold_sync_history.log" \
     || echo "⚠️ Node unreachable — skipped" >> "$log_root/cold_sync_history.log"
 

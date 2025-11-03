@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -e
-NODE="104.248.10.130:17536"
+NODE="node.banncoin.org:17536"
 WALLET="$1"
 if [ -z "$WALLET" ]; then
   read -rp "Enter your BNC address (bnc1...): " WALLET
