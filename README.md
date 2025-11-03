@@ -1,4 +1,10 @@
 # 🪙 Banncoin
+![Banncoin Wordmark](https://raw.githubusercontent.com/banncoin/banncoin-core/main/site/assets/brand/banncoin-wordmark.svg)
+
+[![License](https://img.shields.io/badge/license-Proprietary-blue)](LICENSE)
+[![Status](https://img.shields.io/badge/status-Active-success)]()
+[![Chain](https://img.shields.io/badge/chain-Mainnet-green)]()
+[![Version](https://img.shields.io/badge/version-v1.0.0-lightgrey)]()
 
 **Banks fail. Chains prevail.**  
 Banncoin is a sovereign, miner-anchored blockchain protocol built to embody transparency, resilience, and self-governance.
