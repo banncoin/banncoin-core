@@ -14,7 +14,8 @@ If you encounter a potential security vulnerability within the Banncoin system,
 
 Instead, initiate secure contact via email:
 
-📧 **banncoin@yahoo.com**
+📧 **contact@banncoin.org
+**
 
 Include:
 - A clear, concise description of the issue
