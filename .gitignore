@@ -1,24 +1,45 @@
-# OS + Editor files
+# --- Keys & secrets ---
+*.pem
+*.key
+*.p12
+*.pkcs12
+id_*
+*.crt
+*.csr
+*.cer
+.secrets/
+.env
+.env.*
+*.env.local
+
+# --- Logs & artifacts ---
+*.log
+logs/
+dist/
+build/
+*.zip
+*.tar
+*.tar.gz
+
+# --- Python ---
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+*.pyc
+
+# --- Node/Web ---
+node_modules/
+.cache/
 .DS_Store
 Thumbs.db
-*.log
-*.tmp
-*.bak
 
-# Windows metadata
-*:Zone.Identifier
+# --- OS/editor ---
+*.swp
+*.swo
+.vscode/
+.idea/
 
-# Python & Node builds
-__pycache__/
-*.pyc
-node_modules/
-
-# Archive and backup files
-*.tar.gz
-*.zip
-*.7z
-
-# System and tool folders
-old_chain_dbs/
-archives/
-logs/
+# --- Site mirrors we re-generate ---
+site/docs/*.tmp.json
