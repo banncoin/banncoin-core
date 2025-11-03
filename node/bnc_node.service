@@ -1,0 +1,11 @@
+[Unit]
+Description=Banncoin Node Service
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/python3 /opt/banncoin/bnc_node.py --data-dir /root/bnc_full_chain
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
