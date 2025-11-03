@@ -1,0 +1,98 @@
+{
+  "exported_at": "2025-11-03T13:31:01.126446+00:00",
+  "source": "raspi",
+  "node_url": "http://104.248.10.130:17536/recent?count=10",
+  "ok": true,
+  "recent_blocks": [
+    {
+      "difficulty_bits": 24,
+      "hash": "000000e4a062351949acd0ab342393c4b1f0740aa58bb2ee920f9d28e49cad2a",
+      "index": 40631,
+      "nonce": 6244104,
+      "previous_hash": "000000053a89305a122df60f9850505dc2240a61f37ae6a300e38e23f76e6077",
+      "reward_to": "bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc",
+      "timestamp": 1762176470
+    },
+    {
+      "difficulty_bits": 24,
+      "hash": "000000053a89305a122df60f9850505dc2240a61f37ae6a300e38e23f76e6077",
+      "index": 40630,
+      "nonce": 1941721,
+      "previous_hash": "000000b1b81258cea7927adafccc93e674dbd6c22c4c55590c77e61c14eb0b74",
+      "reward_to": "bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc",
+      "timestamp": 1762176455
+    },
+    {
+      "difficulty_bits": 24,
+      "hash": "000000b1b81258cea7927adafccc93e674dbd6c22c4c55590c77e61c14eb0b74",
+      "index": 40629,
+      "nonce": 7125317,
+      "previous_hash": "000000013e4a775d279aadb84afff4d94f7dc2c18691e484f37fa55dcde9f01e",
+      "reward_to": "bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc",
+      "timestamp": 1762176402
+    },
+    {
+      "difficulty_bits": 24,
+      "hash": "000000013e4a775d279aadb84afff4d94f7dc2c18691e484f37fa55dcde9f01e",
+      "index": 40628,
+      "nonce": 4920000,
+      "previous_hash": "000000479823e3833aa40f79174deef15099ae9f2c0c5dd3c9d511b44b03b8bd",
+      "reward_to": "bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc",
+      "timestamp": 1762176367
+    },
+    {
+      "difficulty_bits": 24,
+      "hash": "000000479823e3833aa40f79174deef15099ae9f2c0c5dd3c9d511b44b03b8bd",
+      "index": 40627,
+      "nonce": 19932951,
+      "previous_hash": "000000d7a200c471e805f073d7a63d8a5169fcd3fceb3d9561b40ebdddbc199c",
+      "reward_to": "bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc",
+      "timestamp": 1762176212
+    },
+    {
+      "difficulty_bits": 24,
+      "hash": "000000d7a200c471e805f073d7a63d8a5169fcd3fceb3d9561b40ebdddbc199c",
+      "index": 40626,
+      "nonce": 14608283,
+      "previous_hash": "00000044b415ea4392f75778286f79939f33529c295506872343246a8945445a",
+      "reward_to": "bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc",
+      "timestamp": 1762176098
+    },
+    {
+      "difficulty_bits": 24,
+      "hash": "00000044b415ea4392f75778286f79939f33529c295506872343246a8945445a",
+      "index": 40625,
+      "nonce": 5733345,
+      "previous_hash": "000000141dbed95dc07b5b750e826b586746ebfa0db2da5de2235ed0905c97c5",
+      "reward_to": "bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc",
+      "timestamp": 1762176054
+    },
+    {
+      "difficulty_bits": 24,
+      "hash": "000000141dbed95dc07b5b750e826b586746ebfa0db2da5de2235ed0905c97c5",
+      "index": 40624,
+      "nonce": 6388573,
+      "previous_hash": "000000b7f2201d7661fb0ec64494e87827b18f32d12b588d850956dbd31dfc86",
+      "reward_to": "bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc",
+      "timestamp": 1762176005
+    },
+    {
+      "difficulty_bits": 24,
+      "hash": "000000b7f2201d7661fb0ec64494e87827b18f32d12b588d850956dbd31dfc86",
+      "index": 40623,
+      "nonce": 107153223,
+      "previous_hash": "00000034f8b5c72f67fa124a5d02d89b3267e2d28de7ca0d0cb62c1992bfe53b",
+      "reward_to": "bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc",
+      "timestamp": 1762175212
+    },
+    {
+      "difficulty_bits": 24,
+      "hash": "00000034f8b5c72f67fa124a5d02d89b3267e2d28de7ca0d0cb62c1992bfe53b",
+      "index": 40622,
+      "nonce": 9635121,
+      "previous_hash": "000000776d99829156daec4cab5f68736d5c3a6a0e2806658fc52884684bd2da",
+      "reward_to": "bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc",
+      "timestamp": 1762175142
+    }
+  ]
+}
