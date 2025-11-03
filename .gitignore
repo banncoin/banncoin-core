@@ -1,0 +1,24 @@
+# OS + Editor files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+
+# Windows metadata
+*:Zone.Identifier
+
+# Python & Node builds
+__pycache__/
+*.pyc
+node_modules/
+
+# Archive and backup files
+*.tar.gz
+*.zip
+*.7z
+
+# System and tool folders
+old_chain_dbs/
+archives/
+logs/
