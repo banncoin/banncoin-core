@@ -1,9 +1,9 @@
 {
   "chain_id": "BNC-0fa9f99c4746e1c5",
   "difficulty_bits": 24,
-  "hash": "0000008629f86f121eaae7b2d403aeb63d78034247f7f8804448efdae97bac35",
-  "height": 40428,
-  "next_retarget_in": 63,
+  "hash": "000000648812bc786bcb70154583d7108558ac09d6369b4d3a84be62342385a1",
+  "height": 40791,
+  "next_retarget_in": 96,
   "ok": true,
-  "exported_at": "2025-11-03T06:55:36.117543Z"
+  "exported_at": "2025-11-03T19:55:20.274572+00:00"
 }

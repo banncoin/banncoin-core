@@ -1,15 +1,96 @@
 {
-  "exported_at": "2025-11-03T17:25:13.584115Z",
   "ok": true,
   "recent_blocks": [
     {
-      "index": 40275,
-      "timestamp": "2025-11-03T10:05Z",
-      "hash": "000004...",
-      "previous_hash": "000005...",
       "difficulty_bits": 24,
-      "reward_to": "bnc1...",
-      "nonce": 320003
+      "hash": "000000648812bc786bcb70154583d7108558ac09d6369b4d3a84be62342385a1",
+      "index": 40791,
+      "nonce": 68229635,
+      "previous_hash": "0000003ddcfd4680e9c30aeed78c23355bd26f91a5deb22cd2539b824907920d",
+      "reward_to": "bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc",
+      "timestamp": 1762199188
+    },
+    {
+      "difficulty_bits": 24,
+      "hash": "0000003ddcfd4680e9c30aeed78c23355bd26f91a5deb22cd2539b824907920d",
+      "index": 40790,
+      "nonce": 42885849,
+      "previous_hash": "000000c21f5b361bb30b7925037041b7005f40df19f23a0975d3c6657b091a7b",
+      "reward_to": "bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc",
+      "timestamp": 1762198865
+    },
+    {
+      "difficulty_bits": 24,
+      "hash": "000000c21f5b361bb30b7925037041b7005f40df19f23a0975d3c6657b091a7b",
+      "index": 40789,
+      "nonce": 437550,
+      "previous_hash": "000000834c06476580841209fde58842c47118781c20d42c310187a8d78f4556",
+      "reward_to": "bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc",
+      "timestamp": 1762198861
+    },
+    {
+      "difficulty_bits": 24,
+      "hash": "000000834c06476580841209fde58842c47118781c20d42c310187a8d78f4556",
+      "index": 40788,
+      "nonce": 8964872,
+      "previous_hash": "00000011123c4832cefff9b5ca6daff84bf63becd9d67772e49a2c3a517e1393",
+      "reward_to": "bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc",
+      "timestamp": 1762198790
+    },
+    {
+      "difficulty_bits": 24,
+      "hash": "00000011123c4832cefff9b5ca6daff84bf63becd9d67772e49a2c3a517e1393",
+      "index": 40787,
+      "nonce": 91065291,
+      "previous_hash": "00000070ed2ef85b90095b23823a306b341eb72a33e99ed11cfdb15728150954",
+      "reward_to": "bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc",
+      "timestamp": 1762198104
+    },
+    {
+      "difficulty_bits": 24,
+      "hash": "00000070ed2ef85b90095b23823a306b341eb72a33e99ed11cfdb15728150954",
+      "index": 40786,
+      "nonce": 30630500,
+      "previous_hash": "000000299c06abb47013ca2f9c5887371eb0356a9ab991bd4141c52bfba6256e",
+      "reward_to": "bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc",
+      "timestamp": 1762197877
+    },
+    {
+      "difficulty_bits": 24,
+      "hash": "000000299c06abb47013ca2f9c5887371eb0356a9ab991bd4141c52bfba6256e",
+      "index": 40785,
+      "nonce": 9385686,
+      "previous_hash": "000000ef9279fbede842e2af714caf8a0d14c93d0cb47910e64c7cbe657287a2",
+      "reward_to": "bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc",
+      "timestamp": 1762197808
+    },
+    {
+      "difficulty_bits": 24,
+      "hash": "000000ef9279fbede842e2af714caf8a0d14c93d0cb47910e64c7cbe657287a2",
+      "index": 40784,
+      "nonce": 35263055,
+      "previous_hash": "000000d0b7efa36562e2e29d3b0543aafe681294bac7af53ce97f4e03ae8c283",
+      "reward_to": "bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc",
+      "timestamp": 1762197541
+    },
+    {
+      "difficulty_bits": 24,
+      "hash": "000000d0b7efa36562e2e29d3b0543aafe681294bac7af53ce97f4e03ae8c283",
+      "index": 40783,
+      "nonce": 5533270,
+      "previous_hash": "000000ce4ba3afe91d1a19fa4430cdf1f657250da34f91bfc1ba0e9c42fbbc34",
+      "reward_to": "bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc",
+      "timestamp": 1762197500
+    },
+    {
+      "difficulty_bits": 24,
+      "hash": "000000ce4ba3afe91d1a19fa4430cdf1f657250da34f91bfc1ba0e9c42fbbc34",
+      "index": 40782,
+      "nonce": 41268372,
+      "previous_hash": "0000004c61866885e54547d61c3fbd7312efee4137b93965c96aa1bad043d9ac",
+      "reward_to": "bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc",
+      "timestamp": 1762197194
     }
-  ]
+  ],
+  "exported_at": "2025-11-03T19:55:20.785612+00:00"
 }
