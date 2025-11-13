@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+.env
+# Logs/artifacts
+*.log
+logs/
+miner_logs/
+*.csv
+*.ndjson
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
