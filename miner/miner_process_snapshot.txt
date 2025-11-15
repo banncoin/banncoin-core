@@ -1,0 +1,1 @@
+697610 /usr/bin/python3 /home/banncoin/bnc_miner.py --api http://104.248.10.130:17536 --reward-to bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc --log-dir /home/banncoin/miner_logs

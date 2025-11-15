@@ -1,0 +1,20 @@
+# /etc/systemd/system/bncminer.service
+[Unit]
+Description=Banncoin Miner (Non-Root — Remote Node)
+After=network.target
+
+[Service]
+User=banncoin
+WorkingDirectory=/home/banncoin
+ExecStart=/usr/bin/python3 /home/banncoin/bnc_miner.py \
+  --api http://104.248.10.130:17536 \
+  --reward-to bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc \
+  --log-dir /home/banncoin/miner_logs
+Restart=always
+RestartSec=5
+Nice=10
+StandardOutput=append:/var/log/banncoin/miner.log
+StandardError=append:/var/log/banncoin/miner.log
+
+[Install]
+WantedBy=multi-user.target
