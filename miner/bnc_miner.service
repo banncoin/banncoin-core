@@ -1,0 +1,11 @@
+[Unit]
+Description=Banncoin Miner Service
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/banncoinminer/bnc_miner.py --node http://node.banncoin.org:17536 --wallet bnc15rletyrdxzr777ckldd3z5hd26sgd32n6edrnskl3fk93qd2pc8qk8w6rc
+Restart=always
+User=banncoinminer
+
+[Install]
+WantedBy=multi-user.target

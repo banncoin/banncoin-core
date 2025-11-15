@@ -1,0 +1,45 @@
+# --- Keys & secrets ---
+*.pem
+*.key
+*.p12
+*.pkcs12
+id_*
+*.crt
+*.csr
+*.cer
+.secrets/
+.env
+.env.*
+*.env.local
+
+# --- Logs & artifacts ---
+*.log
+logs/
+dist/
+build/
+*.zip
+*.tar
+*.tar.gz
+
+# --- Python ---
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+*.pyc
+
+# --- Node/Web ---
+node_modules/
+.cache/
+.DS_Store
+Thumbs.db
+
+# --- OS/editor ---
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# --- Site mirrors we re-generate ---
+site/docs/*.tmp.json

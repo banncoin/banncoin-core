@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+  <rect width="512" height="512" fill="#F7F1E3"/>
+  <g stroke="#1F1300" stroke-width="18" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(156 60)">
+    <!-- simple stylized double helix -->
+    <path d="M0 0 C 60 40, 60 120, 0 160 C -60 200, -60 280, 0 320"/>
+    <path d="M200 0 C 140 40, 140 120, 200 160 C 260 200, 260 280, 200 320"/>
+    <line x1="0" y1="20" x2="200" y2="20"/>
+    <line x1="0" y1="80" x2="200" y2="80"/>
+    <line x1="0" y1="140" x2="200" y2="140"/>
+    <line x1="0" y1="200" x2="200" y2="200"/>
+    <line x1="0" y1="260" x2="200" y2="260"/>
+    <line x1="0" y1="320" x2="200" y2="320"/>
+  </g>
+</svg>
+

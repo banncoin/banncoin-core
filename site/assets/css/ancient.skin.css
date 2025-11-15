@@ -1,0 +1,159 @@
+/* Banncoin Ancient Skin (generic, symbol-free)
+   Toggle with <body class="ancient">. Works over your existing CSS.
+   Materials: dark stone, soft sand, aged gold. Shapes: lines, rings, grids.
+*/
+
+:root{
+  --anc-bg:#0a0a0b;
+  --anc-stone-1:#101114;
+  --anc-stone-2:#0d0e11;
+  --anc-line:#1b1e24;
+  --anc-etch:rgba(255,255,255,.04);
+  --anc-gold:#ffd84d;
+  --anc-gold-soft:rgba(255,216,77,.10);
+  --anc-text:#f5f7fa;
+  --anc-glow:0 0 100px rgba(255,216,77,.12);
+}
+
+.ancient{
+  background:
+    radial-gradient(1200px 700px at 70% -10%, rgba(255,216,77,.06), transparent 60%),
+    radial-gradient(900px 600px at -10% 80%, rgba(255,216,77,.04), transparent 70%),
+    var(--anc-bg);
+  color:var(--anc-text);
+  letter-spacing:.1px;
+  -webkit-font-smoothing:antialiased;
+}
+
+.ancient h1,.ancient h2,.ancient h3,.ancient h4{
+  font-family:"Marcellus", ui-serif, Georgia, serif;
+  letter-spacing:.3px;
+  text-shadow:0 1px 0 rgba(0,0,0,.45), 0 -1px 0 rgba(255,255,255,.03);
+}
+.ancient p,.ancient li,.ancient a,.ancient button,.ancient input{
+  font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+.ancient .panel,.ancient .card{
+  background:linear-gradient(180deg,var(--anc-stone-1),var(--anc-stone-2));
+  border:1px solid var(--anc-line);
+  border-radius:14px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.03), 0 10px 30px rgba(0,0,0,.35), var(--anc-glow);
+  position:relative; overflow:hidden;
+}
+.ancient .card::before{
+  content:""; position:absolute; inset:0;
+  background:repeating-linear-gradient(90deg,transparent 0 10px,var(--anc-etch) 10px 11px),
+             repeating-linear-gradient(0deg, transparent 0 10px,var(--anc-etch) 10px 11px);
+  opacity:.10; pointer-events:none; mask:linear-gradient(#000, transparent 65%);
+}
+
+.ancient .btn{
+  border:1px solid var(--anc-gold);
+  background:linear-gradient(180deg,var(--anc-gold),#ffcf2a);
+  color:#141414; font-weight:800; border-radius:10px;
+  box-shadow:0 6px 18px rgba(255,216,77,.15);
+}
+.ancient .btn:hover{ transform:translateY(-1px) }
+.ancient .btn.btn-outline{ background:transparent; color:var(--anc-gold); border:1px solid rgba(255,216,77,.5); box-shadow:none }
+.ancient .btn.btn-outline:hover{ background:var(--anc-gold-soft) }
+
+.ancient a{ color:var(--anc-gold) }
+.ancient .nav a{ color:#e9edf5 }
+.ancient .nav a:hover,.ancient .nav a.active{ color:var(--anc-gold) }
+.ancient .site-header{ border-bottom:1px solid var(--anc-line); box-shadow:0 1px 0 rgba(255,255,255,.03) }
+
+.ancient .hero{ position:relative; overflow:hidden }
+.ancient .hero::after{
+  content:""; position:absolute; inset:-20% -10% auto -10%; height:420px;
+  background:radial-gradient(45% 45% at 50% 50%, rgba(255,216,77,.18), transparent 60%),
+             repeating-radial-gradient(circle at 50% 50%, rgba(255,216,77,.08) 0 1px, rgba(255,216,77,0) 1px 14px);
+  filter:blur(26px) saturate(120%); opacity:.65; pointer-events:none; animation:ancPulse 8s ease-in-out infinite;
+}
+@keyframes ancPulse{ 50%{ transform:scale(1.03) } }
+
+.ancient .badge{ background:var(--anc-gold-soft); border:1px solid rgba(255,216,77,.35); color:#ffe48a }
+.ancient hr.soft{ border:0; height:1px; background:var(--anc-line); margin:1.5rem 0 }
+
+.ancient .dashboard{ border:1px solid var(--anc-line); border-radius:12px; overflow:hidden; box-shadow:inset 0 1px 0 rgba(255,255,255,.03), var(--anc-glow) }
+.ancient .dashboard thead th{ background:linear-gradient(180deg,#111318,#0b0c10); color:#ffe48a; font-family:"Marcellus", ui-serif, serif }
+
+.ancient .anc-keyline{ height:2px; width:120px; margin:.5rem 0 1rem; background:linear-gradient(90deg,transparent,var(--anc-gold),transparent); filter:drop-shadow(0 0 10px rgba(255,216,77,.2)) }
+
+
+/* ==== Future Scroll — Ancient parchment styling (page-scoped) ==== */
+.ancient-scroll{ background:#0a0a0b; }
+.ancient-scroll .scroll-wrap{
+  --parchment-base:#191411; --parchment-edge:#110d0b; --parchment-fiber:rgba(255,216,77,.06);
+  max-width:860px; margin:2.5rem auto; padding:2rem 1.25rem; border-radius:18px;
+  background:
+    radial-gradient(120% 120% at 50% 0%, var(--parchment-fiber) 0%, transparent 60%),
+    linear-gradient(180deg, var(--parchment-base), var(--parchment-edge));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 20px 40px rgba(0,0,0,.55), 0 0 0 1px rgba(255,216,77,.08);
+}
+.ancient-scroll .scroll-divider{ border:0; height:1px; background:linear-gradient(90deg,transparent, rgba(255,216,77,.35), transparent); margin:1.5rem 0 1.25rem; }
+.ancient-scroll .scroll-verse{ margin:0 0 1rem; padding:.75rem 1rem; border-left:3px solid rgba(255,216,77,.35); color:#ffe48a; background:rgba(255,216,77,.03); border-radius:10px; }
+.ancient-scroll h1,.ancient-scroll h2,.ancient-scroll h3{ color:#ffd84d; font-family:"Marcellus", Georgia, serif; letter-spacing:.3px; }
+.ancient-scroll h1{ font-size:2rem; margin:0 0 .5rem; }
+.ancient-scroll h2{ font-size:1.35rem; margin:1rem 0 .5rem; }
+.ancient-scroll p,.ancient-scroll li{ color:#e9e3d3; }
+.ancient-scroll .muted{ color:#cfc6ae; }
+.ancient-scroll .bullets{ list-style:none; padding-left:0; margin:.5rem 0 0; }
+.ancient-scroll .bullets li{ position:relative; padding-left:1.25rem; margin:.35rem 0; }
+.ancient-scroll .bullets li::before{ content:"◦"; position:absolute; left:0; top:0; color:#ffd84d; opacity:.85; }
+@media (max-width:560px){ .ancient-scroll .scroll-wrap{ margin:1.25rem .75rem; padding:1.25rem .9rem } .ancient-scroll h1{ font-size:1.7rem } .ancient-scroll h2{ font-size:1.2rem } }
+
+/* ==== Future Scroll — tiny gold scroll icon (pure CSS, page-scoped) ==== */
+.ancient-scroll h1 {
+  position: relative;
+  padding-left: 2.25rem; /* space for icon */
+  display: inline-block;
+}
+
+/* Icon built with gradients + border radius; no external asset */
+.ancient-scroll h1::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1.6rem;
+  height: 1.2rem;
+  transform: translateY(-50%);
+  border-radius: 3px;
+  background:
+    linear-gradient(180deg, rgba(255,216,77,0.22), rgba(255,216,77,0.10)),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,216,77,0.10) 0,
+      rgba(255,216,77,0.10) 2px,
+      rgba(255,216,77,0.06) 2px,
+      rgba(255,216,77,0.06) 4px
+    );
+  box-shadow:
+    inset 0 0 0 1px rgba(255,216,77,0.25),
+    0 2px 6px rgba(0,0,0,0.45);
+}
+
+/* gold rods (scroll handles) */
+.ancient-scroll h1::after {
+  content: "";
+  position: absolute;
+  left: -0.35rem;
+  top: 50%;
+  width: 2.3rem;       /* spans behind the paper */
+  height: 0.26rem;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 0% 50%, #b48c1f, rgba(0,0,0,0) 60%),
+    radial-gradient(circle at 100% 50%, #b48c1f, rgba(0,0,0,0) 60%),
+    linear-gradient(90deg, #8a6a17, #ffd84d 40%, #ffd84d 60%, #8a6a17);
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.35));
+}
+
+/* small screens: nudge spacing a bit tighter */
+@media (max-width: 420px){
+  .ancient-scroll h1 { padding-left: 2rem; }
+  .ancient-scroll h1::before { width: 1.45rem; height: 1.05rem; }
+  .ancient-scroll h1::after  { width: 2rem; left: -0.3rem; }
+}

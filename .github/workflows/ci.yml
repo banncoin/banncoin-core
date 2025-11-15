@@ -1,0 +1,35 @@
+name: ci
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install ruff
+      - run: ruff --version
+      - run: ruff check .
+
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Lychee checks links in HTML/Markdown
+      - uses: lycheeverse/lychee-action@v1
+        with:
+          args: --no-progress --max-concurrency 4 --include-fragments site/**/*.html README.md
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+  secret-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

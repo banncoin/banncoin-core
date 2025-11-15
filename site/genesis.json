@@ -1,0 +1,23 @@
+{
+  "index": 0,
+  "timestamp": "2025-09-29T00:00:00Z",
+  "prev_hash": "0",
+  "reward": 0,
+  "reward_to": "GENESIS",
+  "difficulty": 369,
+  "message": "\"Think in terms of energy, frequency and vibration.\" — Nikola Tesla",
+  "symbol": "BNC",
+  "principle": "Sovereign value, free from control",
+  "genesis_message": "2025: Banks fail, chains prevail",
+  "chain_params": {
+    "block_time_target": 26,
+    "halving_interval_blocks": 3641187,
+    "initial_block_reward": 458,
+    "max_money": 3333333333,
+    "cap_guard": true,
+    "retarget_interval": 100,
+    "retarget_factor_limit": 4,
+    "difficulty_initial": 369
+  },
+  "hash": "add8ca31c494ac8d6f93d1ed97380b6b559f7601ff1fc2ce432cef80182153a0"
+}

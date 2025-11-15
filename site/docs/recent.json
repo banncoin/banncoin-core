@@ -1,0 +1,15 @@
+{
+  "exported_at": "2025-11-15T15:15:20.646693Z",
+  "ok": true,
+  "recent_blocks": [
+    {
+      "index": 40275,
+      "timestamp": "2025-11-03T10:05Z",
+      "hash": "000004...",
+      "previous_hash": "000005...",
+      "difficulty_bits": 24,
+      "reward_to": "bnc1...",
+      "nonce": 320003
+    }
+  ]
+}
