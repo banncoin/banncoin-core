@@ -1,53 +1,187 @@
-# 🪙 Banncoin
-![Banncoin Wordmark](https://raw.githubusercontent.com/banncoin/banncoin-core/main/site/assets/brand/banncoin-wordmark.svg)
+🪙 Banncoin Core
 
-[![License](https://img.shields.io/badge/license-Proprietary-blue)](LICENSE)
-[![Status](https://img.shields.io/badge/status-Active-success)]()
-[![Chain](https://img.shields.io/badge/chain-Mainnet-green)]()
-[![Version](https://img.shields.io/badge/version-v1.0.0-lightgrey)]()
+Banks fail. Chains prevail.
+A sovereign, miner-anchored blockchain protocol.
 
-**Banks fail. Chains prevail.**  
-Banncoin is a sovereign, miner-anchored blockchain protocol built to embody transparency, resilience, and self-governance.
+<div style="margin-top:10px;margin-bottom:20px;">
 
----
+Status: Active
+License: Banncoin Open Use License
+Language: Python + HTML/CSS/JS
+Eras: A (bootstrap) → B (economic, active)
 
-## 🌐 Overview
-This repository contains the current **Banncoin.org** site bundle, including:
+</div>
+📦 What This Repository Contains
+Folder	Purpose
+miner/	Official open-source Harmonic Miner
+node/	Reference node implementation
+site/	Public JSON feeds (status.json, recent.json, etc.)
+scripts/	Exporters, utilities, non-sensitive helpers
+docs/	Public documentation, manifests, explorer mirrors
 
-| Folder | Purpose |
-|:--|:--|
-| `admin/` | Internal admin tools and logs |
-| `assets/` | Brand, CSS, icons, and static media |
-| `css/` | Stylesheets for layout and localization |
-| `docs/` | Public documentation and explorer mirrors |
-| `downloads/` | Miner, node, and wallet packages |
-| Root files (`index.html`, `status.json`, etc.) | Core site and chain metadata |
+This repository contains no secrets, no admin commands, no infrastructure, and no sensitive data.
 
----
+⚡ Quickstart — Miner Developer Edition
+git clone https://github.com/banncoin/banncoin-core.git
+cd banncoin-core/miner
+python3 bnc_miner.py \
+  --api https://node.banncoin.org \
+  --reward-to YOUR_WALLET \
+  --log-dir ./miner_logs
 
-## ⚙️ Related Projects
-| Repository | Description |
-|:--|:--|
-| [banncoin-explorer](https://github.com/banncoin/banncoin-explorer) | Live block data from mining operations |
-| [banncoin-docs](https://github.com/banncoin/banncoin-docs) | Public documentation & governance pages |
-| **Private:** `banncoin-org` | Primary web bundle and deployment assets |
-| **Private:** `banncoin-private` *(this repo)* | Site source and verified backup archive |
 
----
+✔ Works on Linux, macOS, WSL2
+✔ CPU-friendly
+✔ Era B compliant
+✔ Auto-adapts to difficulty
 
-## 🧰 Tech Stack
-- **HTML / CSS / JS** — static site architecture  
-- **Python** — miner & node scripts  
-- **JSON** — on-chain metadata and block status  
-- **GitHub + Netlify** — deployment + redundancy  
+Never mine to placeholders like YOUR_WALLET.
+Use your own Banncoin address (bnc1…).
 
----
+🔧 Public JSON Feeds (Open API)
+Endpoint	Description
+/docs/status.json	Network health & difficulty
+/docs/recent.json	Recent block summaries
+/docs/manifest.json	Chain metadata
 
-## 🪶 Motto
-> *“Value grows where no master can touch.”*  
+All files under site/docs/ are safe, public-facing, and auto-updated.
 
----
+🧱 Architecture Overview
 
-## 📦 License
-© 2025 Banncoin. All rights reserved.  
-See `LICENSE` (to be added) for usage and redistribution details.
+See: ARCHITECTURE_OVERVIEW.md
+
+Covers:
+
+Era system
+
+Block flow
+
+Miner → Node → Chain relationship
+
+Status + manifest format
+
+Public metadata rules
+
+🧭 Contribution Guidelines
+
+See: CONTRIBUTING.md
+
+No logs, keys, tokens, IPs
+
+No binaries in repo
+
+Keep PRs focused
+
+Add tests where relevant
+
+🔐 Security
+
+See: SECURITY.md
+Report vulnerabilities to contact@banncoin.org
+.
+
+🪶 Motto
+
+“Value grows where no master can touch.”
+
+Paste that into the README.md file inside the GitHub GUI and commit.
+
+This is C1 = complete.
+
+✅ C2 — Internal Docs Alignment
+
+We update two internal docs to look fully professional and aligned:
+
+1. ARCHITECTURE_OVERVIEW.md
+2. CONTRIBUTING.md
+
+These contain NO operational info, only high-level developer documentation.
+
+1️⃣ ARCHITECTURE_OVERVIEW.md (Final, Safe Version)
+
+Open GitHub GUI → banncoin-core → ARCHITECTURE_OVERVIEW.md → Edit
+Paste this:
+
+🧩 Banncoin Architecture Overview
+
+Banncoin is a sovereign, miner-anchored blockchain protocol structured into two eras:
+
+Era A — Bootstrap
+Non-economic blocks used to initialize the chain.
+
+Era B — Economic Era
+Fully active mining, real rewards, difficulty retargeting.
+
+This document describes the public architecture of the miner, node, public JSON outputs, and site metadata.
+
+🔗 System Components
+1. Miner
+
+CPU-based Harmonic hashing loop
+
+Fetches template → computes nonces → submits valid blocks
+
+Stateless; all authoritative state lives on the node
+
+Uses /status to get difficulty_bits, height, and target_seconds
+
+2. Node
+
+Receives block submissions
+
+Validates difficulty, timestamp, reward, parent hash
+
+Updates chain state
+
+Publishes public JSON (status.json, recent.json, manifest.json)
+
+3. Public Metadata
+
+Directory: site/docs/
+
+status.json → chain tip, difficulty
+
+recent.json → recent blocks
+
+manifest.json → chain metadata and structural info
+
+All safe for public consumption.
+
+🔄 Block Lifecycle
+
+Miner requests block template
+
+Miner computes nonces
+
+Valid block → submit → node validates
+
+Node commits new block
+
+JSON feeds update
+
+Explorers read public endpoints
+
+🌐 Node Endpoint Rules
+
+All public miners use:
+https://node.banncoin.org
+
+Responses are stable and versioned
+
+No sensitive output is published
+
+🧱 Eras
+Era	Description	Rewards
+A	Bootstrap	Non-spendable
+B	Active chain	Spendable mining rewards
+🎯 Design Principles
+
+Simplicity over complexity
+
+Security over convenience
+
+No secrets in repo
+
+Reproducible modules
+
+Public metadata only
