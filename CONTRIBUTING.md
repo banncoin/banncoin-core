@@ -1,17 +1,36 @@
-# Contributing to Banncoin
+# Contributing to Banncoin Core
 
-Thanks for your interest!
+Thank you for your interest in the Banncoin ecosystem.
 
-## Ground rules
-- **No secrets or ops material** in this repo. Do not commit keys, logs, tokens, IPs, or admin tooling.
-- **No binaries** in source control. Release artifacts live under *GitHub Releases*.
-- Public JSON endpoints (`/docs/status.json`, `/docs/manifest.json`, `/docs/recent.json`) are a **public API** — add only documented fields.
+## Repository Layout
 
-## How to contribute
-1. Fork and branch from `main`.
-2. Keep PRs small and focused.
-3. Add tests or sample data when relevant.
-4. Run CI locally if possible; fix lint errors.
+site/ → Public documentation & API JSON
+node/ → Banncoin Node (reference implementation)
+miner/ → Harmonic Miner (CPU)
+scripts/ → Automation, audits, sync tools
 
-## Reporting security issues
-See **SECURITY.md** and email **contact@banncoin.org**.
+markdown
+Copy code
+
+## Rules
+
+- No private IPs or environment details in commits  
+- All changes must preserve deterministic chain behavior  
+- Genesis, Era A and Era B are immutable  
+- Mining logic must remain verifiable & CPU-fair  
+
+## How to Contribute
+
+1. Fork the repository  
+2. Create a feature branch  
+3. Submit a PR with a clear description  
+4. Pass all smoke tests (`scripts/test-basic.sh`)  
+
+## Documentation
+
+Mining Guide  
+→ `site/docs/mining.md`  
+Node API  
+→ `site/docs/status.json`, `site/docs/recent.json`  
+
+For questions, open a discussion or contact maintainers.
